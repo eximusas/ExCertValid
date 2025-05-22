@@ -1,0 +1,21 @@
+-- Validar Certificado Externos en el JAVA JDK
+  .\validate_truststore.exe `
+  --jdk "C:\Program Files\Java\jdk-21" `
+  --storepass changeit `
+  --expected "nosis,sectigo,usertrust" `
+  --certfiles "C:\ruta\nosis.cer,C:\ruta\sectigo.cer,C:\ruta\usertrust.cer" `
+  --host sac.nosis.com `
+  --port 443
+
+
+  -- Validar Certificado SSL del Tomcat
+.\validate_tomcat.exe `
+  --tomcat "C:\Tomcat 9.0" `
+  --jdk    "C:\Program Files\AdoptOpenJDK\jdk-11.0.5.10-hotspot" `
+  --keystore "C:\Sites\Bantotal\apache-tomcat-10.0.21\conf\keystore.jks" `
+  --storepass changeit `
+  --host   sac.nosis.com `
+  --port   443
+
+
+
